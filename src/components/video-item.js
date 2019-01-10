@@ -5,14 +5,15 @@ const Article = styled.article`
 	border-radius: 8px;
 	display: flex;
 	align-items: center;
-	padding: 8px 12px;
-	margin: 8px auto;
-	box-sizing: border-box;
+	/* padding: 8px 12px; */
+	padding: 0;
+	margin: 0;
 	border: 2px solid #f6f6f6;
 	transition: border .2s ease-in-out;
+	background: #222;
 	cursor: pointer;
-	max-width: 500px;
 	text-align: left;
+	cursor: pointer;
 	:hover {
 		border: 2px solid rgba(237, 164, 163, 0.8);
 	}
@@ -20,10 +21,12 @@ const Article = styled.article`
 const Container = styled.div`
 	width: 112px;
 	height: 80px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
-	border-radius: 4px;
+	/* border-radius: 4px; */
 	flex-shrink: 0;
+	float: left;
+	margin-right: 8px;
 	img {
 		position: absolute;
 		left: 50%;
@@ -36,11 +39,11 @@ const Container = styled.div`
 
 const Details = styled.div`
 	padding: 8px 22px;
-	@media only screen and(max-width: 500px) {
+	/* @media only screen and(max-width: 500px) {
 		padding: 14px;
-	}
+	} */
 	p {
-		margin-top: 4px;
+		/* margin-top: 4px; */
 		word-wrap: break-word;
 		word-break: break-word;
 	}
@@ -48,8 +51,8 @@ const Details = styled.div`
 		font-family: 'Montserrat', sans-serif;
 		line-height: 1.2;
 		font-weight: 500;
-		font-size: 1em;
-		color: #2f3940;
+		font-size: 0.7em;
+		color: #ffffff;
 	}
 `;
 
@@ -65,7 +68,6 @@ class VideoItem extends React.Component {
 				</Container>
 				<Details>
 					<h1>{video.title}</h1>
-					<p>{video.description.substring(0, 100) + ' ...'}</p>
 				</Details>
 			</Article>
 		);

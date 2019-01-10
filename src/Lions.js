@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Header from './components/header';
 import MainVideo from './components/main-video';
 import VideoList from './components/video-list';
 import Footer from './components/footer';
+import styled from 'styled-components';
 
+const Container = styled.div`
+	width: 100%;
+	max-width: 1100px;
+	min-width: 440px;
+	background: #fff;
+	margin: 0 auto;
+`;
 class App extends Component {
 	state = {
 		videos: [],
@@ -47,11 +54,11 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<Container>
 				<MainVideo video={this.state.currentVideo} />
 				<VideoList itemClicked={this.itemClicked} videos={this.state.videos} />
 				<Footer buttonClicked={this.buttonClicked} results={this.state.pageToken} />
-			</div>
+			</Container>
 		);
 	}
 }
